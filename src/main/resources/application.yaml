@@ -1,0 +1,67 @@
+server:
+  port: 8809
+spring:
+  redis:
+    database: 0
+    host: 10.199.100.9
+    port: 6379
+    timeout: 60000
+    password: yqlhFMwPb1Wm50es
+#  kafka:
+#    consumer:
+#      group-id: notification_tracker
+#      auto-offset-reset: earliest
+#      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#      value-deserializer: com.kss.notificationtracker.utils.NotificationDeserializer
+#    bootstrap-servers: 10.199.100.13:9092
+  application:
+    name: user-device-management
+  jackson:
+    serialization:
+      fail-on-empty-beans: false
+      write-dates-as-timestamps: false
+    deserialization:
+      FAIL_ON_UNKNOWN_PROPERTIES: false
+  main:
+    allow-circular-references: true
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  datasource:
+    hikari:
+      maxLifetime: '2000000'
+      connectionTimeout: '30000'
+      minimumIdle: '3'
+      poolName: HikariPoolUserManagementService
+      idleTimeout: '30000'
+      maximumPoolSize: '20'
+    driver-class-name: org.mariadb.jdbc.Driver
+    username: user_management
+    password: bTUEp4d4JrS5vNAe
+    url: jdbc:mariadb://10.199.200.7:3306,10.199.200.8:3306,10.199.200.9:3306:3306/user_management?autoReconnect=true
+  jpa:
+    show-sql: false
+logging:
+  level:
+    root: debug
+springfox:
+  documentation:
+    enabled: true
+    swagger-ui:
+      enabled: true
+management:
+  endpoint:
+    prometheus:
+      enabled: true
+    metrics:
+      enabled: true
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+        pushgateway:
+          enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: health, info, prometheus, metrics
