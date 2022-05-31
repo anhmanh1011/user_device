@@ -19,11 +19,9 @@ import java.util.Objects;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Topic {
-    @Id
-    @Column(name = "id", nullable = false, length = 100)
-    private String id;
 
-    @Column(name = "topic_name", length = 256)
+    @Id
+    @Column(name = "topic_name")
     private String topicName;
 
     @Column(name = "`desc`", length = 100)
@@ -37,17 +35,4 @@ public class Topic {
 
     @Column(name = "update_time")
     private LocalDateTime updateTime;
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        Topic topic = (Topic) o;
-        return id != null && Objects.equals(id, topic.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return getClass().hashCode();
-    }
 }

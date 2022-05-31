@@ -10,8 +10,8 @@ import javax.validation.constraints.NotBlank;
 public class SubscribeTopicRequest {
     @JsonIgnore
     String userId;
-    @JsonProperty("topic_id")
+    @JsonProperty("topic_name")
     @NotBlank
-    String topicId;
+    String topicName;
     Boolean subscribe = true;
 }

@@ -1,6 +1,6 @@
 package com.kss.userdevicemanagement.model.request;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
@@ -14,6 +14,6 @@ public class DeviceRegisterRequest {
     String macAddress;
     String os;
     String token;
-    @JsonIgnoreProperties
+    @JsonIgnore
     String publicIp;
 }

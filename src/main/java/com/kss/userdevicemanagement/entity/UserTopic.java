@@ -21,11 +21,11 @@ public class UserTopic {
     @Column(name = "id")
     private String id;
 
-    @Column(name = "user_id", length = 100)
+    @Column(name = "user_id")
     private String userId;
 
-    @Column(name = "topic_id", length = 100)
-    private String topicId;
+    @Column(name = "topic_name")
+    private String topicName;
 
     @Column(name = "status")
     private Boolean status = true;

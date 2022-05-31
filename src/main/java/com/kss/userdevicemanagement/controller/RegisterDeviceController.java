@@ -7,10 +7,7 @@ import com.kss.userdevicemanagement.model.response.DeviceRegisterResponse;
 import com.kss.userdevicemanagement.service.UserDeviceManagementService;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import springfox.documentation.annotations.ApiIgnore;
 
 import javax.servlet.http.HttpServletRequest;
@@ -41,8 +38,8 @@ public class RegisterDeviceController {
         return new ResponseData<DeviceRegisterResponse>().success(userDeviceManagementService.registerDevice(deviceRegisterRequest));
     }
 
-    @PostMapping(value = "/e/device/register/{device_uuid}/{user_id}", produces = "application/json")
-    public ResponseData<Void> registerUserDevice(@PathVariable(value = "device_uuid") String deviceUUID, @PathVariable(value = "user_id") String userId) throws ApiException {
+    @PostMapping(value = "/e/{user_id}/device/register", produces = "application/json")
+    public ResponseData<Void> registerUserDevice(@RequestParam(name = "device_uuid") String deviceUUID, @PathVariable(value = "user_id") String userId) throws ApiException {
         userDeviceManagementService.userDeviceRegister(userId, deviceUUID);
         return new ResponseData<>();
     }

@@ -11,7 +11,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class DeviceRegisterResponse {
     String deviceId;
-    String installId;
     Boolean isNewDevice;
     String id;
 }

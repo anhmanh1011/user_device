@@ -19,7 +19,7 @@ public class TopicController {
     TopicService topicService;
 
     @PostMapping("/e/subscribe_topic/{user_id}")
-    public ResponseData<Void> subscribeTopic(@RequestBody SubscribeTopicRequest subscribeTopicRequest, @PathVariable(value = "user_id") String userId ) throws ApiException {
+    public ResponseData<Void> subscribeTopic(@RequestBody SubscribeTopicRequest subscribeTopicRequest, @PathVariable(value = "user_id") String userId) throws ApiException {
         subscribeTopicRequest.setUserId(userId);
         topicService.subscribeTopic(subscribeTopicRequest);
         return new ResponseData<>();
