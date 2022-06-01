@@ -57,7 +57,6 @@ public class TopicService {
                 userTopicRepository.saveAndFlush(userTopic);
                 log.info("subscribeTopic with id : " + id);
                 refreshUserTopicCachePublisher.refreshUserTopicEvent(userTopic);
-
             });
         } else {
             log.error("topic doesn't exists");

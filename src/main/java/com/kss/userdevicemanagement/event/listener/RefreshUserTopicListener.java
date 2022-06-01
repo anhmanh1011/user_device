@@ -34,5 +34,7 @@ public class RefreshUserTopicListener implements ApplicationListener<RefreshUser
             }
             userTopicCacheRepository.save(userTopicCacheEntity);
         });
+        log.info("RefreshUserTopicListener:success: " + userTopic.getUserId());
+
     }
 }

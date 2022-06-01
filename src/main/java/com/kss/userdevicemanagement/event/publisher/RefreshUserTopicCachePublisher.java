@@ -1,6 +1,7 @@
 package com.kss.userdevicemanagement.event.publisher;
 
 import com.kss.userdevicemanagement.entity.UserTopic;
+import com.kss.userdevicemanagement.event.RefreshUserTopicCacheEvent;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
@@ -15,7 +16,8 @@ public class RefreshUserTopicCachePublisher {
 
     public void refreshUserTopicEvent(UserTopic userTopic) {
         log.info("Publishing refreshUserTopicEvent ");
-        applicationEventPublisher.publishEvent(userTopic);
+        RefreshUserTopicCacheEvent refreshUserTopicCacheEvent = new RefreshUserTopicCacheEvent(this,userTopic);
+        applicationEventPublisher.publishEvent(refreshUserTopicCacheEvent);
     }
 
 
