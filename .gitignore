@@ -31,3 +31,4 @@ build/
 
 ### VS Code ###
 .vscode/
+/parentFolderLog_IS_UNDEFINED/

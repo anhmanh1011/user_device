@@ -46,17 +46,18 @@
 //            List<String> listUser = Arrays.asList(split);
 //            UserTopicCacheEntity build = UserTopicCacheEntity.builder().topicName(topicName).users(listUser).build();
 //            userTopicCacheEntities.add(build);
+//            userTopicCacheRepository.save(build);
 //        });
-//        redisTemplate.executePipelined((RedisCallback<Object>) connection -> {
-//            RedisConnection redisConnection = connection;
-//            for (UserTopicCacheEntity element : userTopicCacheEntities) {
-//                redisConnection.set(("user_device" + element.getTopicName()).getBytes(), ConvertUtils.convertTobyte(element.getUsers()));
-//            }
-////            userDeviceCacheEntities.forEach(id -> {
-////                redisConnection.get(("user_device" + id.getUserId()).getBytes());
-////            });
-//            return null;
-//        });
+////        redisTemplate.executePipelined((RedisCallback<Object>) connection -> {
+////            RedisConnection redisConnection = connection;
+////            for (UserTopicCacheEntity element : userTopicCacheEntities) {
+////                redisConnection.set(("user_topic" + element.getTopicName()).getBytes(), ConvertUtils.convertTobyte(element.getUsers()));
+////            }
+//////            userDeviceCacheEntities.forEach(id -> {
+//////                redisConnection.get(("user_device" + id.getUserId()).getBytes());
+//////            });
+////            return null;
+////        });
 //        log.info(" send command success");
 //        LocalDateTime end = LocalDateTime.now();
 //        long milisecion = ChronoUnit.MILLIS.between(now, end);

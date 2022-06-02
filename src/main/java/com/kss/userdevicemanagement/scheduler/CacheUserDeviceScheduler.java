@@ -64,7 +64,6 @@
 //        redisTemplate.executePipelined((RedisCallback<Object>) connection -> {
 //            RedisConnection redisConnection = connection;
 //            for (UserDeviceCacheEntity element : userDeviceCacheEntities) {
-//                redisConnection.scriptingCommands().scriptExists()
 //                redisConnection.set(("user_device" + element.getUserId()).getBytes(), ConvertUtils.convertTobyte(element.getDevices()));
 //            }
 ////            userDeviceCacheEntities.forEach(id -> {

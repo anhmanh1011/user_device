@@ -1,5 +1,5 @@
 server:
-  port: 8809
+  port: 8811
 spring:
   redis:
     database: 0
@@ -43,7 +43,7 @@ spring:
     show-sql: false
 logging:
   level:
-    root: debug
+    root: info
 springfox:
   documentation:
     enabled: true
